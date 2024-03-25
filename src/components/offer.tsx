@@ -1,6 +1,5 @@
 // Import necessary components
 // import React from 'react';
-
 // Define the OfferScreen component
 function OfferScreen(): JSX.Element {
   // Return JSX for OfferScreen component
