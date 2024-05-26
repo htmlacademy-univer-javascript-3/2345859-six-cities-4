@@ -1,13 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify transition to card details page', async ({ page }) => {
-  // Navigate to the homepage
+test('Проверка перехода на страницу карточки', async ({ page }) => {
   await page.goto('http://localhost:5173');
 
-  // Wait for the cards to load
+  // Ожидаем загрузки карточек
   await page.waitForSelector('.cities__card');
 
-  // Find the first card and retrieve its name and price
+  // Находим первую карточку и запоминаем ее название и цену
   const firstCardName = await page
     .getByTestId('cardTitle')
     .first()
@@ -17,13 +16,13 @@ test('Verify transition to card details page', async ({ page }) => {
     .first()
     .textContent();
 
-  // Click on the first card
+  // Кликаем на первую карточку
   await page.locator('.cities__card').first().click();
 
-  // Wait for the transition to the new page
+  // Ждем перехода на новую страницу
   await page.waitForSelector('.offer__gallery');
 
-  // Verify that the name and price of the first card match those on the details page
+  // Проверяем, что название и цена первой карточки на странице с деталями совпадают с теми, что мы запомнили ранее
   const cardDetailsName = await page.locator('.offer__name').textContent();
   const cardDetailsPrice = await page
     .locator('.offer__price-value')
@@ -32,7 +31,6 @@ test('Verify transition to card details page', async ({ page }) => {
   expect(cardDetailsName).toBe(firstCardName);
   expect(cardDetailsPrice).toBe(firstCardPrice);
 
-  // Ensure that there are offer details displayed on the details page
   const offerDetails = await page.locator('.offer__inside-item').all();
   expect(offerDetails.length).toBeGreaterThan(0);
 });
