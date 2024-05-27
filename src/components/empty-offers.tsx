@@ -1,4 +1,4 @@
-import { getSelectedCity } from '../TheStore';
+import { getSelectedCity } from '../Store';
 import { useAppSelector } from '../hooks';
 import { memo } from 'react';
 

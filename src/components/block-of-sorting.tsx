@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 import cn from 'classnames';
 import { SortingType } from '../const';
-import { changeSortingType, getSelectedSortType } from '../TheStore';
+import { changeSortingType, getSelectedSortType } from '../Store';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
 function SortingBlock() {

@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import browserHistory from '../../types/browserHistory';
+import browserHistory from '../../types/browser-history';
 import { Middleware } from 'redux';
 import { REDIRECT_TO_ROUTE_TYPE } from '../action';
 import { reducer } from '../reducer';

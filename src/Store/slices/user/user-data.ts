@@ -1,5 +1,5 @@
 import { AuthorizationStatus, NameSpace } from '../../../const';
-import { UserData } from '../../../types/userData';
+import { UserData } from '../../../types/user-data';
 import { createSlice } from '@reduxjs/toolkit';
 import { checkAuthAction, loginAction, logoutAction } from './api-actions';
 

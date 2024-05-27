@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import CitiesList from './listOfCities';
-import PlacesToVisit from './placesToVisit';
-import { getOffers, getSelectedCity } from '../TheStore';
+import CitiesList from './list-of-cities';
+import PlacesToVisit from './places-to-visit';
+import { getOffers, getSelectedCity } from '../Store';
 import { useAppSelector } from '../hooks';
 import { useMemo } from 'react';
 

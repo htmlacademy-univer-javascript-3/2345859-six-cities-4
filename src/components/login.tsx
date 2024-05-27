@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { changeCity, getIsSubmittingLogin, loginAction } from '../TheStore';
+import { changeCity, getIsSubmittingLogin, loginAction } from '../Store';
 import { useNavigate } from 'react-router-dom';
 import { Routes, CityName } from '../const';
 import { toast } from 'react-toastify';

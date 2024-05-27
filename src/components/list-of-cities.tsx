@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { CityName } from '../const';
-import { changeCity } from '../TheStore';
+import { changeCity } from '../Store';
 import { useAppDispatch } from '../hooks';
 import { memo } from 'react';
 

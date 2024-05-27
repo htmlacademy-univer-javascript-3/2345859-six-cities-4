@@ -1,4 +1,4 @@
-import OffersList from './listOffer';
+import OffersList from './list-offer';
 import { Offer } from '../types/offer';
 
 type NearbyOffersProps = {

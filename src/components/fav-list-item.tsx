@@ -1,8 +1,8 @@
-import OffersList from './listOffer.tsx';
+import OffersList from './list-offer.tsx';
 import { Offer } from '../types/offer.ts';
 import { Link } from 'react-router-dom';
 import { Routes, CityName } from '../const.tsx';
-import { changeCity } from '../TheStore';
+import { changeCity } from '../Store/index.ts';
 import { useAppDispatch } from '../hooks/index.ts';
 
 type FavouritesListItemProps = {

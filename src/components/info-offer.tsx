@@ -1,12 +1,12 @@
-import { getAuthCheckedStatus, getReviews } from '../TheStore';
+import { getAuthCheckedStatus, getReviews } from '../Store';
 import { useAppSelector } from '../hooks';
 import { Offer, ExtendedOffer } from '../types/offer';
-import CommentForm from './commentSubmission';
-import OfferDescription from './descriptionOffer';
-import OfferPictures from './pictureOffer';
-import OfferHost from './hostOffer';
-import OfferCardMap from './cardOfferMap';
-import OfferReviews from './reviewOffer';
+import CommentForm from './comment-submission';
+import OfferDescription from './description-offer';
+import OfferPictures from './picture-offer';
+import OfferHost from './host-offer';
+import OfferCardMap from './card-offer-map';
+import OfferReviews from './review-offer';
 
 type OfferInfoProps = {
   id: string;

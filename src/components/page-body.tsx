@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { getFavorites } from '../TheStore';
+import { getFavorites } from '../Store';
 import { useAppSelector } from '../hooks';
 import { useLocation } from 'react-router-dom';
 import { Routes } from '../const';

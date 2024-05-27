@@ -1,12 +1,12 @@
-import { getAuthorizationStatus } from '../TheStore';
+import { getAuthorizationStatus } from '../Store';
 import { useAppSelector } from '../hooks';
 import { Routes } from '../const';
-import PageLayout from './Layout/layoutPage';
-import MainScreen from './mainScreen';
+import PageLayout from './Layout/layout-page';
+import MainScreen from './main-screen';
 
-import MainRouteRedirection from './redirectionMainRoute';
-import PrivateRouteRoute from './privRoute';
-import FavoritesScreen from './favScreen';
+import MainRouteRedirection from './redirection-main-route';
+import PrivateRouteRoute from './priv-route';
+import FavoritesScreen from './fav-screen';
 import OfferScreen from './OfferScreen/offer';
 import LoginScreen from './login';
 import ErrorScreen from './error';

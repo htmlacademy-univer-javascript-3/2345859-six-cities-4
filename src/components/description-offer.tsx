@@ -1,6 +1,6 @@
 import { formatRating, capitalizeFirstLetter } from '../utils';
 import { ExtendedOffer } from '../types/offer';
-import AddToFavouritesButton from './addToFavsButton';
+import AddToFavouritesButton from './add-to-favs-button';
 
 type OfferDescriptionProps = {
   offer: ExtendedOffer;

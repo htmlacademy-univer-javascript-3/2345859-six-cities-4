@@ -6,7 +6,7 @@ import {
   getIsFavoriteStatusSubmitting,
   changeFavouriteStatusAction,
   getAuthCheckedStatus,
-} from '../TheStore';
+} from '../Store';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
 type AddToFavouritesButtonProps = {

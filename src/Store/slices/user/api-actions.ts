@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { APIRoute, NameSpace } from '../../../const';
 import { AsyncThunkConfig } from '../../../types/state';
-import { AuthData } from '../../../types/authorizedData';
-import { UserData } from '../../../types/userData';
+import { AuthData } from '../../../types/authorized-data';
+import { UserData } from '../../../types/user-data';
 import { dropToken, saveToken } from '../../../Services/token';
 import { fetchOffersAction } from '../multiple-offers';
 

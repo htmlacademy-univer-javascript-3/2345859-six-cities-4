@@ -5,7 +5,7 @@ import {
   getReviewsHasError,
   postReviewAction,
   setReviewsErrorStatus,
-} from '../TheStore';
+} from '../Store';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 

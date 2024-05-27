@@ -5,7 +5,7 @@ import {
   getUserInfo,
   logoutAction,
   getFavouritesCount,
-} from '../TheStore';
+} from '../Store';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
 function UserNavigation(): JSX.Element {

@@ -1,7 +1,7 @@
-import SortingBlock from './blockOfSorting.tsx';
-import OffersList from './listOffer.tsx';
+import SortingBlock from './block-of-sorting.tsx';
+import OffersList from './list-offer.tsx';
 import { Offer } from '../types/offer.ts';
-import { getSelectedCity } from '../TheStore';
+import { getSelectedCity } from '../Store/index.ts';
 import { useAppSelector } from '../hooks/index.ts';
 import { memo } from 'react';
 
