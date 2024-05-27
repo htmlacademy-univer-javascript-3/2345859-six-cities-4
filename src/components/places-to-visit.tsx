@@ -2,7 +2,7 @@ import CitiesMap from './map';
 import cn from 'classnames';
 import { Offer } from '../types/offer';
 import { useCallback, useState } from 'react';
-import OffersContainer from './containerOffer';
+import OffersContainer from './container-offer';
 
 interface PlacesToVisitProps {
   offers: Offer[];

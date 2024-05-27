@@ -1,4 +1,4 @@
-import FavouritesListItem from './favListItem';
+import FavouritesListItem from './fav-list-item';
 import { Offer } from '../types/offer';
 import { CityName } from '../const';
 

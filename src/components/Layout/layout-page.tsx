@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Outlet, useLocation } from 'react-router-dom';
-import PageBody from '../pageBody';
+import PageBody from '../page-body';
 import Header from '../header';
 import Footer from '../footer';
 import { usePageInfo } from './hooks';

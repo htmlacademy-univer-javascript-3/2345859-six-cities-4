@@ -1,4 +1,4 @@
-import ReviewItem from './itemReview';
+import ReviewItem from './item-review';
 import { Review } from '../types/review';
 
 const MAX_REVIEWS_COUNT = 10;

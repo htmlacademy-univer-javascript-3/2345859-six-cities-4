@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Offer } from '../../../types/offer';
-import { FavouriteData } from '../../../types/favouritesData';
+import { FavouriteData } from '../../../types/favourites-data';
 
 import { APIRoute, NameSpace } from '../../../const';
 

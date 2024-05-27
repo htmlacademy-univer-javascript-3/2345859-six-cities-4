@@ -1,6 +1,6 @@
 import { Offer } from '../types/offer';
-import EmptyOffers from './emptyOffers';
-import AvailableOffers from './availableOffers';
+import EmptyOffers from './empty-offers';
+import AvailableOffers from './available-offers';
 
 interface OffersContainerProps {
   offers: Offer[];

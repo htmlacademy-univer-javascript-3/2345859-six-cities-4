@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import useAppRoutes from './useAppRoutes';
+import useAppRoutes from './use-app-routes';
 
 function AppRoutes(): JSX.Element {
   const { routes } = useAppRoutes();

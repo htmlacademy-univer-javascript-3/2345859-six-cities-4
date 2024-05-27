@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import UserNavigation from './userNavigation';
+import UserNavigation from './user-navigation';
 import { Link } from 'react-router-dom';
 import { Routes } from '../const';
 import { memo } from 'react';
