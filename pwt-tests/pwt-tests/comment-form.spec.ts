@@ -1,17 +1,17 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Comment Form', () => {
-  test('Проверка работы формы комментария (авторизованный пользователь)', async ({
+  test('Comment Form. Authenticated user', async ({
     page,
   }) => {
     const REVIEW_TEXT =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
     const RATING = 'good';
 
     await page.goto('http://localhost:5173/login');
 
-    await page.fill('input[name="email"]', 'newUser@example.com');
-    await page.fill('input[name="password"]', 'password123');
+    await page.fill('input[name="email"]', 'user@mail.com');
+    await page.fill('input[name="password"]', '1d');
 
     await page.click('button[type="submit"]');
 
@@ -20,8 +20,8 @@ test.describe('Comment Form', () => {
     await page.locator('.cities__card').first().click();
 
     await page.waitForSelector('.offer__gallery');
-    const isFormExist = await page.isVisible('.reviews__form');
-    expect(isFormExist).toBeTruthy();
+    const isFormVisible = await page.isVisible('.reviews__form');
+    expect(isFormVisible).toBeTruthy();
 
     const commentForm = await page.locator('.reviews__form');
     expect(commentForm).toBeTruthy();
@@ -35,25 +35,16 @@ test.describe('Comment Form', () => {
       page.click('button[type="submit"]'),
     ]);
 
-    const newReviewText = await page
-      .locator('.reviews__text')
-      .first()
-      .textContent();
-    const newReviewAuthor = await page
-      .locator('.reviews__user-name')
-      .first()
-      .textContent();
-    const newReviewRating = await page
-      .locator('.reviews__stars>span')
-      .first()
-      .getAttribute('style');
+    const reviewText = await page.locator('.reviews__text').first().textContent();
+    const reviewAuthor = await page.locator('.reviews__user-name').first().textContent();
+    const reviewRating = await page.locator('.reviews__stars>span').first().getAttribute('style');
 
-    expect(newReviewText).toBe(REVIEW_TEXT);
-    expect(newReviewAuthor).toBe('newUser');
-    expect(newReviewRating).toBe('width: 80%;');
+    expect(reviewText).toBe(REVIEW_TEXT);
+    expect(reviewAuthor).toBe('user');
+    expect(reviewRating).toBe('width: 80%;');
   });
 
-  test('Проверка работы формы комментария (неавторизованный пользователь)', async ({
+  test('Comment Form. Unauthenticated user', async ({
     page,
   }) => {
     await page.goto('http://localhost:5173');
@@ -63,7 +54,7 @@ test.describe('Comment Form', () => {
     await page.locator('.cities__card').first().click();
     await page.waitForSelector('.offer__gallery');
 
-    const isCommentFormExist = await page.locator('.reviews__form').isVisible();
-    expect(isCommentFormExist).toBeFalsy();
+    const isCommentFormVisible = await page.locator('.reviews__form').isVisible();
+    expect(isCommentFormVisible).toBeFalsy();
   });
 });

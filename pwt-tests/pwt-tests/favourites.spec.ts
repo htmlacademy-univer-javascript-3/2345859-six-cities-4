@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Favourites', () => {
-  test('Проверка работы Избранного (неавторизованный пользователь)', async ({
+  test('Favourites check. Unauth user', async ({
     page,
   }) => {
     await page.goto('http://localhost:5173');
@@ -23,29 +23,23 @@ test.describe('Favourites', () => {
     await page.waitForURL('http://localhost:5173/login');
   });
 
-  test('Проверка работы Избранного (авторизованный пользователь)', async ({
-    page,
-  }) => {
-    const isFavSelected = async () => {
-      const favBtnClassList = await page
-        .locator('.bookmark-button')
-        .first()
-        .evaluate((el) => [...el.classList]);
-      return favBtnClassList.includes('place-card__bookmark-button--active');
+  test('Favourites check. Auth user', async ({page,}) => {
+    const isFavouriteSelected = async () => {
+      const favouriteButtonClassList = await page.locator('.bookmark-button').first().evaluate(
+        (el) => [...el.classList]
+      );
+      return favouriteButtonClassList.includes('place-card__bookmark-button--active');
     };
 
-    const getFavCount = async () =>
-      parseInt(
+    const getFavouriteCount = async () => parseInt(
         (await page.locator('.header__favorite-count').textContent()) || '0'
       );
 
     await page.goto('http://localhost:5173/login');
 
-    // Fill in the login form
-    await page.fill('input[name="email"]', 'email@example.com');
-    await page.fill('input[name="password"]', 'password123');
+    await page.fill('input[name="email"]', 'user@mail.com');
+    await page.fill('input[name="password"]', '1d');
 
-    // Submit the form
     await Promise.all([
       page.waitForURL('http://localhost:5173'), // Ожидание перехода после отправки формы
       page.click('button[type="submit"]'), // Клик по кнопке "Sign in"
@@ -53,28 +47,26 @@ test.describe('Favourites', () => {
 
     await page.waitForSelector('.cities__card');
 
-    const initialFavCounter = await getFavCount();
+    const initialFavouriteCounter = await getFavouriteCount();
 
-    const wasActive = await isFavSelected();
+    const wasSelected = await isFavouriteSelected();
 
     await Promise.all([
-      page.waitForResponse(
-        (resp) =>
-          resp.url().includes('/favorite') &&
-          resp.status() === (wasActive ? 200 : 201)
+      page.waitForResponse( (resp) =>
+          resp.url().includes('/favorite') && resp.status() === (wasSelected ? 200 : 201)
       ),
       page.locator('.bookmark-button').first().click(),
     ]);
 
-    const isActive = await isFavSelected();
-    const changedFavCounter = await getFavCount();
+    const isSelected = await isFavouriteSelected();
+    const changedFavouriteCounter = await getFavouriteCount();
 
-    if (wasActive) {
-      expect(isActive).toBeFalsy();
-      expect(changedFavCounter).toEqual(initialFavCounter - 1);
+    if (wasSelected) {
+      expect(isSelected).toBeFalsy();
+      expect(changedFavouriteCounter).toEqual(initialFavouriteCounter - 1);
     } else {
-      expect(isActive).toBeTruthy();
-      expect(changedFavCounter).toEqual(initialFavCounter + 1);
+      expect(isSelected).toBeTruthy();
+      expect(changedFavouriteCounter).toEqual(initialFavouriteCounter + 1);
     }
   });
 });
