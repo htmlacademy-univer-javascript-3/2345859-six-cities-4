@@ -1,18 +1,18 @@
 import { useParams } from 'react-router-dom';
-import LoadingScreen from '../loadingScreen';
-import NearbyOffers from '../nearbyOffers';
+import LoadingScreen from '../loading-screen';
+import NearbyOffers from '../nearby-offers';
 import {
   getIsNearbyOffersLoading,
   getIsOfferLoading,
   getIsReviewsLoading,
   getNearbyOffers,
   getOffer,
-} from '../../TheStore';
+} from '../../Store';
 
 import { useAppSelector } from '../../hooks';
 import ErrorScreen from '../error';
 import { useOfferData, usePageInfo } from './hooks';
-import OfferInfo from '../infoOffer';
+import OfferInfo from '../info-offer';
 import { getShuffledNearby } from './utils';
 
 const MAX_OFFERS_PREVIEW = 3;

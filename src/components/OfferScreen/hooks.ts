@@ -5,7 +5,7 @@ import {
   fetchNearbyAction,
   fetchOfferAction,
   fetchReviewsAction,
-} from '../../TheStore';
+} from '../../Store';
 
 import { useAppDispatch } from '../../hooks';
 

@@ -4,11 +4,11 @@ import {
   getHasError,
   getIsOffersLoading,
   store,
-} from '../TheStore';
+} from '../Store';
 import { useAppSelector } from '../hooks';
-import LoadingScreen from '../components/loadingScreen';
+import LoadingScreen from '../components/loading-screen';
 import ErrorScreen from '../components/error';
-import AppRoutes from '../components/appRoutes';
+import AppRoutes from '../components/app-routes';
 
 import { useFetchFavorites } from './hooks';
 

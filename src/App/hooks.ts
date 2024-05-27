@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { fetchFavouritesAction, getAuthCheckedStatus } from '../TheStore';
+import { fetchFavouritesAction, getAuthCheckedStatus } from '../Store';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 
