@@ -56,6 +56,6 @@ test('Card sort check. Price and Popular', async ({ page }) => {
     .allTextContents();
 
   for (let i = 0; i < pricesSortPopular.length; i++) {
-    pricesSortPopular[i] === pricesBeforeSort[i];
+    expect(pricesSortPopular[i] === pricesBeforeSort[i]).toBeTruthy();
   }
 });
